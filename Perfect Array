@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    bool isPerfect(int n, vector<int> &arr) {
+        
+        int start=0, end=n-1;
+        while(start<=end){
+            if(arr[start] != arr[end]){
+                return 0;
+                break;
+            }
+            start++;
+            end--;
+        }
+        
+        return 1;
+        
+    }
+};
