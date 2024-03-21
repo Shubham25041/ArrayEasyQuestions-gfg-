@@ -1,0 +1,15 @@
+// Read the question carefully It was a very easy question and I just fucked up by not reading the question carefully
+
+void scores(long long a[], long long b[], int &ca, int &cb)
+    {
+        ca = cb = 0;
+        for(int i=0; i<3; i++){
+            if(a[i] > b[i]){
+                ca++;
+            }
+            else if(a[i] < b[i]){
+                cb++;
+            }
+        }
+        
+    }
