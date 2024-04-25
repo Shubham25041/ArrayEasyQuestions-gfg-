@@ -1,0 +1,20 @@
+string longestCommonPrefix (string arr[], int N)
+    {
+        sort(arr,arr+N);
+        int count=0;
+        
+        int minLength = min(arr[0].length() , arr[N-1].length() );
+        while(count < minLength && arr[0][count] == arr[N-1][count]){
+            count++;
+        }
+        
+        if(count==0)
+        return "-1";
+        
+        return to_string(count);  // The above code is best when we have to return the number of common character but here we have to return string So, we need to change the code a bit
+
+        return arr[0].substr(0,count);   // This is correct answer here as we have to return the string here not the count of character that are similar
+    }
+
+
+
