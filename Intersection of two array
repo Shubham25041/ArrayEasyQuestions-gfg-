@@ -1,0 +1,38 @@
+// Solution one (Using set)
+int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
+        
+        unordered_set<int>st;
+        for(int i=0; i<n; i++){
+            st.insert(a[i]);
+        }
+        
+        int count = 0;
+        for(int i=0; i<m; i++){
+            if(st.find(b[i]) != st.end()){
+                count++;
+                st.erase(b[i]);
+            }
+        }
+        
+        return count;
+        
+    }
+
+// Solution two (Using map)
+int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
+        
+        unordered_map<int,int>mp;
+        for(int i=0; i<n; i++){
+            mp[a[i]]++;
+        }
+        
+        int count=0; 
+        for(int i=0; i<m; i++){
+            if(mp.find(b[i]) != mp.end() && mp[b[i]] > 0){
+                count++;
+                mp[b[i]]--;
+            }
+        }
+        
+        return count;
+    }
