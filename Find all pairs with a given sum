@@ -1,0 +1,29 @@
+// Output 1
+vector<pair<int,int>> allPairs(int A[], int B[], int N, int M, int X)
+    {
+        sort(A,A+N);
+        sort(B,B+M);
+        
+        vector<pair<int,int>>ans;
+        int x=0,y=M-1;
+        
+        while(x<N && y>=0){
+            if(A[x] + B[y] == X){
+                ans.push_back({A[x],B[y]});
+                x++,y--;
+            }
+            else if(A[x] + B[y] < X){
+                x++;
+            }
+            else{
+                y--;
+            }
+        }
+        
+        return ans;
+        
+    }
+
+// Output 2
+
+using set
