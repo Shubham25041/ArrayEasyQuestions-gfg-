@@ -1,0 +1,11 @@
+int findExtra(int a[], int b[], int n) {
+        int i=0;
+        while(i < n){
+            if(a[i] != b[i]){
+                break;
+            }
+            i++;
+        }
+        
+        return i;
+}
